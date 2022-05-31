@@ -15,8 +15,8 @@ type ModelData struct {
 
 func (mg *appGenerator) Generate() (AppComponent, error) {
 	// Read the main template.
-	tmplHandler := templates.NewTemplateHandler(mg.ModelSettings, mg.ModelData)
-	tmplHandler.Hydrate()
+	tmplHandler := templates.NewTemplateHandler(mg.ModelSettings.ModelType)
+	return tmplHandler.Hydrate(mg.ModelSettings, mg.ModelData)
 	// Start populating it
 	// Output
 }
